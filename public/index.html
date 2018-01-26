@@ -2,22 +2,37 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Convargo</title>
+	<link href="style.css" rel="stylesheet" media="all" type="text/css"> 
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body>
-    <div id="trucker">
-      <input class="name" type="text" placeholder="Trucker name"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-      <input class="price-by-cubic" type="number" placeholder="Price by m3"/>
-    </div>
-    <div id="shipper">
-      <input class="name" type="text" placeholder="Shipper name"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="volume" type="number" placeholder="Volume in m3"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script src="convargo.js"></script>
-    <script src="index.js"></script>
+	<form id="msform">
+	  <fieldset>
+		<h1 id="Title" >CSS/HTML Workshop with Convargo</h1>
+		<h2 class="fs-title">Trucker's information</h2>
+		<div id="trucker">
+			<input class="name" type="text" placeholder="Trucker name"/>
+			<input class="price-by-km" type="number" placeholder="Price by km"/>
+			<input class="price-by-cubic" type="number" placeholder="Price by m3"/>
+		</div>
+		<h2 class="fs-title">Shipper's information</h2>
+		<div id="shipper">
+			<input class="name" type="text" placeholder="Shipper name"/>
+			<input class="distance" type="number" placeholder="Distance in km"/>
+			<input class="volume" type="number" placeholder="Volume in m3"/>
+		</div>
+
+		<div>
+		<h3 class="option_title displayInlineBlock">Deductible option</h3>
+		<input class="option checkbox"  type="checkbox" placeholder="Deductible option"/>	
+		</div>
+		<button id="compute" class="action-button">See result</button>
+		<div id="actors"></div>
+	  </fieldset>
+	</form>
+	<script>$( "form" ).submit(function( event ) {event.preventDefault();});</script>
+	<script src="convargo.js"></script>
+	<script src="index.js"></script>
   </body>
 </html>
